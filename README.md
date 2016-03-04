@@ -8,3 +8,5 @@ Don't have livereload or a server in here yet, but you can compile and watch wit
 ```
 grunt
 ```
+
+and simply reload that index.html file in the browser
