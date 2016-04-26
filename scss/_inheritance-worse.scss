@@ -1,0 +1,20 @@
+/* Inheritance Worse
+   - More Specificity
+   - Overriding more than 2 styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.card { /* card includes a radius and a depth that can be broken out as reusable elements */
+  background-color: #FFF;
+  border-radius: $radius;
+  box-shadow: 0 1px $unit $black-o-90;
+  display: block;
+  padding: $unit $unit $unit * 1.25;
+}
+
+.card-deep { /* we are overriding too many styles */
+  @extend .card;
+  border-radius: $radius * 2;
+  border: $black-o-50 $border;
+  box-shadow: 0 $unit / 2 $unit $black-o-50;
+  margin: $unit * 2 0 $unit * 2.5;
+}

@@ -1,0 +1,70 @@
+@charset "UTF-8";
+/* Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Colors
+––––––––––––––––––––––––- */
+/* Compiled styles (instead of inheritance or mixins)
+––––––––––––––––––––––––- */
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.6em;
+  /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #4b4b4b; }
+
+header, section, footer {
+  margin: 0 auto;
+  max-width: 70rem; }
+
+h1, p {
+  margin: 0 0 0.5rem; }
+
+a {
+  color: #1bb580;
+  text-decoration: none; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+nav li {
+  display: inline-block;
+  margin-right: 2rem; }
+
+nav a {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 0.15rem; }
+
+/* Inheritance Better
+   - Less specific
+   - More reusable
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.card, .card-deep {
+  /* card is more semantic as it defines things only a card would have */
+  background-color: #FFF;
+  display: block;
+  padding: 1rem 1rem 1.25rem; }
+
+.depth-1, .card-deep {
+  /* depth can be a property of any element */
+  -webkit-border-radius: 0.25rem;
+          border-radius: 0.25rem;
+  border: rgba(0, 0, 0, 0.1) 1px solid;
+  -webkit-box-shadow: 0 1px 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 1rem rgba(0, 0, 0, 0.1); }
+
+.card-deep {
+  margin: 2rem 0 2.5rem; }

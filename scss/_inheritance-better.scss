@@ -1,0 +1,22 @@
+/* Inheritance Better
+   - Less specific
+   - More reusable
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.card { /* card is more semantic as it defines things only a card would have */
+  background-color: #FFF;
+  display: block;
+  padding: $unit $unit $unit * 1.25;
+}
+
+.depth-1 { /* depth can be a property of any element */
+  border-radius: $radius;
+  border: $black-o-90 $border;
+  box-shadow: 0 1px $unit $black-o-90;
+}
+
+.card-deep {
+  @extend .card;
+  @extend .depth-1;
+  margin: $unit * 2 0 $unit * 2.5;
+}

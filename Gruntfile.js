@@ -3,6 +3,15 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
 
+    connect: {
+      server: {
+        options: {
+          port: 8080,
+          livereload: true
+        }
+      }
+    },
+
     // Sass to CSS
     sass: {
       app: {
@@ -16,7 +25,7 @@ module.exports = function(grunt) {
       },
       options: {
         sourceMap: false,
-        outputStyle: 'compressed',
+        outputStyle: 'uncompressed',
         imagePath: "../",
         includePaths: [
           require('path').dirname(require.resolve('normalize.css'))
@@ -27,19 +36,38 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: ['scss/{,*/}*.{scss,sass}'],
-        tasks: ['sass']
+        tasks: ['sass', 'postcss']
       },
       options: {
+        port: 8080,
         livereload: true,
-        spawn: false
+        spawn: true
       }
     },
+
+    postcss: {
+      options: {
+        diff: true,
+        map: false,
+        processors: [
+          require('autoprefixer')({browsers: ['last 10 versions']})
+        ]
+      },
+      dist: {
+        src: 'css/*.css',
+        dest: 'css/prefixed.css'
+      }
+    }
+
   });
 
   // Loads Grunt Tasks
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-postcss');
 
   // Default task(s).
-  grunt.registerTask('default', ['sass', 'watch']);
+  grunt.registerTask('default', ['connect', 'sass', 'postcss', 'watch']);
+
 };
