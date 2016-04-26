@@ -68,7 +68,14 @@ module.exports = function(grunt) {
   				'css/main.css': 'css/main.css'
   			}
   		}
-  	}
+  	},
+
+    open : {
+      dev : {
+        path: 'http://localhost:8080/',
+        app: 'Google Chrome'
+      }
+    }
 
   });
 
@@ -78,8 +85,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-cssnano');
+  grunt.loadNpmTasks('grunt-open');
 
   // Default task(s).
-  grunt.registerTask('default', ['connect', 'sass', 'postcss', 'watch']);
+  grunt.registerTask('default', ['connect', 'sass', 'postcss', 'open', 'watch']);
 
 };
