@@ -35,7 +35,7 @@ module.exports = function(grunt) {
 
     watch: {
       sass: {
-        files: ['scss/{,*/}*.{scss,sass}'],
+        files: ['scss/{,*/}*.{scss,sass}', '*.html'],
         tasks: ['sass', 'postcss']
       },
       options: {
@@ -57,7 +57,18 @@ module.exports = function(grunt) {
         src: 'css/*.css',
         dest: 'css/prefixed.css'
       }
-    }
+    },
+
+    cssnano: {
+  		options: {
+  			sourcemap: false
+  		},
+  		dist: {
+  			files: {
+  				'css/main.css': 'css/main.css'
+  			}
+  		}
+  	}
 
   });
 
@@ -66,6 +77,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-postcss');
+  grunt.loadNpmTasks('grunt-cssnano');
 
   // Default task(s).
   grunt.registerTask('default', ['connect', 'sass', 'postcss', 'watch']);

@@ -66,28 +66,3 @@ nav a {
 
 .card-deep {
   margin: 2rem 0 2.5rem; }
-
-/* Using Mixins
-   - More code
-   - Often unessecary with Autoprefixer (http://caniuse.com/)
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.card, .card-deep {
-  /* card is more semantic as it defines things only a card would have */
-  background-color: #FFF;
-  display: block;
-  padding: 1rem 1rem 1.25rem; }
-
-.depth-1, .card-deep {
-  /* begin mixins */
-  -webkit-border-radius: 0.25rem;
-  -moz-border-radius: 0.25rem;
-  -ms-border-radius: 0.25rem;
-  border-radius: 0.25rem;
-  -webkit-box-shadow: 0 1px 1rem rgba(0, 0, 0, 0.1) ;
-  -moz-box-shadow: 0 1px 1rem rgba(0, 0, 0, 0.1) ;
-  box-shadow: 0 1px 1rem rgba(0, 0, 0, 0.1) ;
-  /* end mixins */
-  border: rgba(0, 0, 0, 0.1) 1px solid; }
-
-.card-deep {
-  margin: 2rem 0 2.5rem; }
