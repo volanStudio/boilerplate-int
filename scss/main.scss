@@ -1,16 +1,16 @@
 // @import 'normalize';
-// @import 'mixins-better';
-@import 'mixins-worse';
+// @import 'better/mixins';
+@import 'worse/mixins';
 
-@import 'variables-better';
-// @import 'variables-worse';
+@import 'better/variables';
+// @import 'worse/variables';
 
 @import 'base';
 
-@import 'nesting-better';
-// @import 'nesting-worse';
+@import 'better/nesting';
+// @import 'worse/nesting';
 
-@import 'inheritance-better';
-// @import 'inheritance-worse';
+@import 'better/inheritance';
+// @import 'worse/inheritance';
 
-// @import 'using-mixins';
+// @import 'worse/using-mixins';
